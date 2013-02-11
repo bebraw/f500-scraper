@@ -1,0 +1,27 @@
+#!/usr/bin/env node
+var fs = require('fs');
+var json2csv = require('json2csv');
+
+var VERSION = '0.1.0';
+
+var program = require('commander');
+
+console.log('json to csv ' + VERSION + '\n');
+
+program.
+    version(VERSION).
+    option('-i --input <input>', 'input file').
+    option('-o --output <output>', 'output file').
+    parse(process.argv);
+
+if(!program.input) return console.log('missing input!');
+if(!program.output) return console.log('missing output!');
+
+main(program.input, program.output);
+
+function main(input, output) {
+    var data = require('../' + input.split('.')[0]);
+    json2csv({data: data, fields: ['industry', 'name', 'rank', 'revenueAmount', 'revenueChange', 'profitAmount', 'profitChange']}, function(csv) {
+        fs.writeFile(output, csv, 'utf-8');
+    });
+}
