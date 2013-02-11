@@ -5,7 +5,7 @@ var scraper = require('../lib/scraper');
 
 var program = require('commander');
 
-console.log('jkl-event-scraper ' + VERSION + '\n');
+console.log('f500-scraper ' + VERSION + '\n');
 
 program.
     version(VERSION).
