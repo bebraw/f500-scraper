@@ -1,12 +1,12 @@
 {
-    "name": "jkl-event-scraper",
+    "name": "f500-scraper",
     "private": true,
-    "description": "Jkl event scraper",
+    "description": "F500 scraper",
     "author": "Juho Vepsalainen <bebraw@gmail.com>",
     "version": "0.1.0",
 
     "engines": {
-        "node": "0.8.x",
+        "node": "0.10.x",
         "npm": "1.x"
     },
 
